@@ -22,7 +22,7 @@ function sidebarClick(id) {
    Example basemaps from Stamen/Mapbox */
 var mapboxTer = L.tileLayer("//{s}.tiles.mapbox.com/v3/matt.72ef5189/{z}/{x}/{y}.png", {
   detectRetina: 'true',
-  maxZoom: 18,
+  maxZoom: 21,
   subdomains: ["a", "b", "c", "d"],
   attribution: 'Tiles courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a> '
 });
