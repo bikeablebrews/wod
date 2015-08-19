@@ -22,7 +22,7 @@ function sidebarClick(id) {
    Example basemaps from Stamen/Mapbox */
 var stamenTer = L.tileLayer("//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png", {
   detectRetina: 'true',
-  maxZoom: 21,
+  maxZoom: 18,
   subdomains: ["a", "b", "c", "d"],
   attribution: 'Tiles courtesy of <a href="http://www.stamen.com/" target="_blank">Stamen</a> '
 });
