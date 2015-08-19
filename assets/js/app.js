@@ -20,7 +20,7 @@ function sidebarClick(id) {
 
 /* Basemap Layers
    Example basemaps from Stamen/Mapbox */
-var stamenTer = L.tileLayer("//{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png", {
+var stamenTer = L.tileLayer("//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png", {
   detectRetina: 'true',
   maxZoom: 21,
   subdomains: ["a", "b", "c", "d"],
