@@ -20,11 +20,11 @@ function sidebarClick(id) {
 
 /* Basemap Layers
    Example basemaps from Stamen/Mapbox */
-var stamenTer = L.tileLayer("//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png", {
+var mapboxTer = L.tileLayer("//{s}.tiles.mapbox.com/v3/matt.72ef5189/{z}/{x}/{y}.png", {
   detectRetina: 'true',
   maxZoom: 18,
   subdomains: ["a", "b", "c", "d"],
-  attribution: 'Tiles courtesy of <a href="http://www.stamen.com/" target="_blank">Stamen</a> '
+  attribution: 'Tiles courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a> '
 });
 
 var mapboxSat = L.tileLayer("//{s}.tiles.mapbox.com/v3/examples.map-qfyrx5r8/{z}/{x}/{y}.png", {
@@ -143,7 +143,7 @@ $.getJSON("data/pois.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [38.978868, -77.397463],
-  layers: [stamenTer, wodTrail, markerClusters, highlight],
+  layers: [mapboxTer, wodTrail, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -231,7 +231,7 @@ if (document.body.clientWidth <= 767) {
 }
 
 var baseLayers = {
-  "Terrain": stamenTer,
+  "Terrain": mapboxTer,
   "Imagery": mapboxSat
 };
 
