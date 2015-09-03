@@ -4,6 +4,7 @@ html, body, #container {
   overflow: hidden;
 }
 body {
+  font-family: 'Lato', sans-serif;
   padding-top: 50px;
 }
 input[type="radio"], input[type="checkbox"] {
