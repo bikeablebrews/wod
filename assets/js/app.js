@@ -236,6 +236,7 @@ var other = L.geoJson(null, {
 });
 $.getJSON("data/other.geojson", function (data) {
   other.addData(data);
+  map.addLayer(otherLayer);
 });
 
 map = L.map("map", {
