@@ -226,7 +226,7 @@ var other = L.geoJson(null, {
       otherSearch.push({
         name: layer.feature.properties.Name,
         address: layer.feature.properties.Address,
-        source: "other",
+        source: "Other",
         id: L.stamp(layer),
         lat: layer.feature.geometry.coordinates[1],
         lng: layer.feature.geometry.coordinates[0]
