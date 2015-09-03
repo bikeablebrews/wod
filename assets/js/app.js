@@ -33,12 +33,6 @@ $("#legend-btn").click(function() {
   return false;
 });
 
-$("#login-btn").click(function() {
-  $("#loginModal").modal("show");
-  $(".navbar-collapse.in").collapse("hide");
-  return false;
-});
-
 $("#list-btn").click(function() {
   $('#sidebar').toggle();
   map.invalidateSize();
@@ -109,24 +103,16 @@ function syncSidebar() {
 }
 
 /* Basemap Layers */
-var mapquestOSM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
+var mapboxTer = L.tileLayer("http://{s}.tiles.mapbox.com/v3/matt.72ef5189/{z}/{x}/{y}.png", {
   maxZoom: 19,
-  subdomains: ["otile1", "otile2", "otile3", "otile4"],
-  attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+  subdomains: ["a", "b", "c", "d"],
+  attribution: 'Tiles courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a> '
 });
-var mapquestOAM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
+var mapboxSat = L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-qfyrx5r8/{z}/{x}/{y}.png", {
   maxZoom: 18,
-  subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
-  attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
+  subdomains: ["a", "b", "c", "d"],
+  attribution: 'Tiles courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a> '
 });
-var mapquestHYB = L.layerGroup([L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
-  maxZoom: 18,
-  subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"]
-}), L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/hyb/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
-  attribution: 'Labels courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
-})]);
 
 /* Overlay Layers */
 var highlight = L.geoJson(null);
@@ -255,7 +241,7 @@ $.getJSON("data/other.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM, trail, markerClusters, highlight],
+  layers: [mapboxTer, trail, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -358,9 +344,8 @@ if (document.body.clientWidth <= 767) {
 }
 
 var baseLayers = {
-  "Street Map": mapquestOSM,
-  "Aerial Imagery": mapquestOAM,
-  "Imagery with Streets": mapquestHYB
+  "Street Map": mapboxTer,
+  "Imagery": mapboxSat
 };
 
 var groupedOverlays = {
