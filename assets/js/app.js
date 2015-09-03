@@ -355,7 +355,7 @@ var groupedOverlays = {
     "<img src='assets/img/other.png' width='24' height='28'>&nbsp;Other": otherLayer
   },
   "Reference": {
-    "Trail": trail
+    "W&OD": trail
   }
 };
 
