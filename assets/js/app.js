@@ -19,7 +19,7 @@ function sidebarClick(id) {
 }
 
 /* Basemap Layers
-   Example basemaps from Mapbox */
+   Example basemaps from Stamen/Mapbox */
 var mapboxTer = L.tileLayer("//{s}.tiles.mapbox.com/v3/matt.72ef5189/{z}/{x}/{y}.png", {
   detectRetina: 'true',
   maxZoom: 21,
