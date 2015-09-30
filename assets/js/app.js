@@ -103,7 +103,7 @@ function syncSidebar() {
 }
 
 /* Basemap Layers */
-var mapboxTer = L.tileLayer("http://{s}.tiles.mapbox.com/v3/matt.72ef5189/{z}/{x}/{y}.png", {
+var mapboxTer = L.tileLayer("http://{s}.tiles.mapbox.com/v3/azavea.map-zbompf85/{z}/{x}/{y}.png", {
   maxZoom: 19,
   subdomains: ["a", "b", "c", "d"],
   attribution: 'Tiles courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a> '
