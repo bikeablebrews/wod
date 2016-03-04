@@ -109,10 +109,8 @@ var mapboxTer = L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiZG1vZm90IiwiYSI6IjMyODFmMjkwYTQ1NjUxYTEzOWYwOGZlMTMxY2FjZThiIn0.eNpL_ksyAN2Tcy5UeLqhyQ'
 });
-var mapboxSat = L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-qfyrx5r8/{z}/{x}/{y}.png", {
-  maxZoom: 18,
-  subdomains: ["a", "b", "c", "d"],
-  attribution: 'Tiles courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a> '
+var esriSat = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
 
 /* Overlay Layers */
@@ -347,7 +345,7 @@ if (document.body.clientWidth <= 767) {
 
 var baseLayers = {
   "Street Map": mapboxTer,
-  "Imagery": mapboxSat
+  "Imagery": esriSat
 };
 
 var groupedOverlays = {
