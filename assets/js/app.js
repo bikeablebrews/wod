@@ -103,10 +103,11 @@ function syncSidebar() {
 }
 
 /* Basemap Layers */
-var mapboxTer = L.tileLayer("http://{s}.tiles.mapbox.com/v3/azavea.map-zbompf85/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  subdomains: ["a", "b", "c", "d"],
-  attribution: 'Tiles courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a> '
+var mapboxTer = L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  attribution: 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  id: 'dmofot.n9pd56jd',
+  accessToken: 'pk.eyJ1IjoiZG1vZm90IiwiYSI6IjMyODFmMjkwYTQ1NjUxYTEzOWYwOGZlMTMxY2FjZThiIn0.eNpL_ksyAN2Tcy5UeLqhyQ'
 });
 var mapboxSat = L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-qfyrx5r8/{z}/{x}/{y}.png", {
   maxZoom: 18,
