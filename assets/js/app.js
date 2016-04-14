@@ -109,8 +109,12 @@ var mapboxTer = L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiZG1vZm90IiwiYSI6IjMyODFmMjkwYTQ1NjUxYTEzOWYwOGZlMTMxY2FjZThiIn0.eNpL_ksyAN2Tcy5UeLqhyQ'
 });
-var esriSat = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+var mapboxSat = L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  attribution: 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  detectRetina: 'true',
+  id: 'dmofot.paomdkki',
+  accessToken: 'pk.eyJ1IjoiZG1vZm90IiwiYSI6IjMyODFmMjkwYTQ1NjUxYTEzOWYwOGZlMTMxY2FjZThiIn0.eNpL_ksyAN2Tcy5UeLqhyQ'
 });
 
 /* Overlay Layers */
