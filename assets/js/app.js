@@ -351,7 +351,7 @@ if (document.body.clientWidth <= 767) {
 
 var baseLayers = {
   "Street Map": mapboxTer,
-  "Imagery": esriSat
+  "Imagery": mapboxSat
 };
 
 var groupedOverlays = {
